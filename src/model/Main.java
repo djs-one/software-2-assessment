@@ -5,19 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("login.fxml"));
-        Scene scene = new Scene(loader.load());
-        stage.setTitle("Inventory - Home");
+    public void start(Stage stage) throws IOException {
+        Scene scene = FXMLLoader.load((getClass().getResource("login.fxml")));
         stage.setScene(scene);
         stage.show();
     }
 
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
